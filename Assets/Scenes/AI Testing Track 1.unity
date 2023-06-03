@@ -31457,10 +31457,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7574174275721012697, guid: 515af78de78ab6043a661a51011b522a, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 7486693747109097743, guid: 515af78de78ab6043a661a51011b522a, type: 3}
+      propertyPath: VehicleTarget
+      value: 
+      objectReference: {fileID: 1842736247}
     - target: {fileID: 7574174275721012701, guid: 515af78de78ab6043a661a51011b522a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -31505,27 +31505,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.147
       objectReference: {fileID: 0}
-    - target: {fileID: 7574174275721012710, guid: 515af78de78ab6043a661a51011b522a, type: 3}
-      propertyPath: vehicleMotorForce
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574174275721012710, guid: 515af78de78ab6043a661a51011b522a, type: 3}
-      propertyPath: vehicleSteeringAngle
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 7574174275721012711, guid: 515af78de78ab6043a661a51011b522a, type: 3}
       propertyPath: m_Name
       value: Yellow Car Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7939710402055875817, guid: 515af78de78ab6043a661a51011b522a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939710402055875817, guid: 515af78de78ab6043a661a51011b522a, type: 3}
-      propertyPath: CameraOffset.z
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1842736248, guid: 515af78de78ab6043a661a51011b522a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 515af78de78ab6043a661a51011b522a, type: 3}
 --- !u!1001 &1584185231
 PrefabInstance:
@@ -36622,29 +36607,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 393555384750968757, guid: 7f98c8176bfca7347b11006aac2c90ce, type: 3}
   m_PrefabInstance: {fileID: 1837856376}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1842736241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7574174275721012711, guid: 515af78de78ab6043a661a51011b522a, type: 3}
-  m_PrefabInstance: {fileID: 1580437897}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1842736247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7574174275721012701, guid: 515af78de78ab6043a661a51011b522a, type: 3}
   m_PrefabInstance: {fileID: 1580437897}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1842736248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842736241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d3cc8344269bf44ae31146b17f8fed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VehicleTarget: {fileID: 1842736247}
 --- !u!1001 &1852942562
 PrefabInstance:
   m_ObjectHideFlags: 0

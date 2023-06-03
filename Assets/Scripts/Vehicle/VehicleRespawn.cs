@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehicleRespawner : MonoBehaviour
+public class VehicleRespawn : MonoBehaviour
 {
     [SerializeField] Transform VehicleTarget;
 
@@ -10,15 +10,15 @@ public class VehicleRespawner : MonoBehaviour
     {
         HandleVehicleRespawn();
     }
-
     private void HandleVehicleRespawn()
     {
-        if (VehicleTarget.rotation.z >= 90f || VehicleTarget.rotation.z <= -90f)
+        if (VehicleTarget.rotation.eulerAngles.z >= 85f || VehicleTarget.rotation.eulerAngles.z <= -85f)
         {
             if (Input.GetKey(KeyCode.R))
             {
                 Vector3 eulerRotation = VehicleTarget.rotation.eulerAngles;
                 VehicleTarget.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0f);
+                Debug.Log($"rot {VehicleTarget.rotation}");
             }
         }
     }

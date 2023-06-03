@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 7574174275721012696}
   - component: {fileID: 7574174275721012697}
   - component: {fileID: 7574174275721012710}
+  - component: {fileID: 7486693747109097743}
   m_Layer: 0
   m_Name: Yellow Car Player
   m_TagString: Untagged
@@ -554,7 +555,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7574174275721012711}
-  m_LocalRotation: {x: 0.00007097183, y: -0.9370421, z: 0.0038564387, w: 0.34919512}
+  m_LocalRotation: {x: -0.000068720656, y: 0.93704224, z: -0.0038578433, w: -0.34919477}
   m_LocalPosition: {x: 1.2624407, y: 0.46345666, z: -1.7120569}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -563,7 +564,7 @@ Transform:
   - {fileID: 7574174275205365229}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.417, y: 220.877, z: 0.147}
 --- !u!33 &7574174275721012698
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -642,7 +643,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7574174275721012710
@@ -657,9 +658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29e5eb0f43b7604686a08ceba7d0ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicleMotorForce: 1500
+  vehicleMotorForce: 2500
   vehicleBrakingForce: 3000
-  vehicleSteeringAngle: 20
+  vehicleSteeringAngle: 30
   FrontRightWheelCollider: {fileID: 7574174275301980796}
   FrontLeftWheelCollider: {fileID: 7574174274799762902}
   RearRightWheelCollider: {fileID: 7574174276386610110}
@@ -668,6 +669,19 @@ MonoBehaviour:
   FrontLeftWheelTransform: {fileID: 7574174276356603327}
   RearRightWheelTransform: {fileID: 7574174276350982274}
   RearLeftWheelTransform: {fileID: 7574174275518830909}
+--- !u!114 &7486693747109097743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7574174275721012711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476df42e5646e2d479e843fbaaab6b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VehicleTarget: {fileID: 0}
 --- !u!1 &7574174276131768609
 GameObject:
   m_ObjectHideFlags: 0
