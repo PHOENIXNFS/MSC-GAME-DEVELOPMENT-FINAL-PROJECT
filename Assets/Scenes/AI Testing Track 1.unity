@@ -14351,6 +14351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6999497201ee36442bbe711798e30f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RacersTransformList:
+  - {fileID: 1842736247}
 --- !u!4 &564519109
 Transform:
   m_ObjectHideFlags: 0

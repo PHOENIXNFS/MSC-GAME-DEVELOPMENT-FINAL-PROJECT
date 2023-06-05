@@ -11,7 +11,7 @@ public class Checkpoint : MonoBehaviour
         if (other.TryGetComponent<CarController>(out CarController carController))
         {
             //Debug.Log("Checkpoint Reached");
-            trackCheckpointManager.CarPassedCheckpoint(this);
+            trackCheckpointManager.CarPassedCheckpoint(this, other.transform);
         }
     }
 
