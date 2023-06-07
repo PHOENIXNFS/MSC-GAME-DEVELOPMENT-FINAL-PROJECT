@@ -1,0 +1,29 @@
+{
+    "Car Controller AI": {
+        "checkpoints": [
+            {
+                "steps": 31328,
+                "file_path": "results\\CAR_AI_TRAIN_1\\Car Controller AI\\Car Controller AI-31328.onnx",
+                "reward": null,
+                "creation_time": 1686166740.934254,
+                "auxillary_file_paths": [
+                    "results\\CAR_AI_TRAIN_1\\Car Controller AI\\Car Controller AI-31328.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 31328,
+            "file_path": "results\\CAR_AI_TRAIN_1\\Car Controller AI.onnx",
+            "reward": null,
+            "creation_time": 1686166740.934254,
+            "auxillary_file_paths": [
+                "results\\CAR_AI_TRAIN_1\\Car Controller AI\\Car Controller AI-31328.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.8.0+cpu"
+    }
+}

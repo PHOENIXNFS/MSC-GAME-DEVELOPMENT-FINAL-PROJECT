@@ -7,8 +7,9 @@ public class CarController : MonoBehaviour
     private const string HORIZONTAL_MOTION = "Horizontal";
     private const string VERTICAL_MOTION = "Vertical";
     
-    private float horizontalInput;
-    private float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
+
     private bool bIsVehicleBraking;
     private float currentBrakingForce;
     private float currentSteeringAngle;
@@ -80,6 +81,14 @@ public class CarController : MonoBehaviour
         FrontRightWheelCollider.brakeTorque = currentBrakingForce;
         RearLeftWheelCollider.brakeTorque = currentBrakingForce;
         RearRightWheelCollider.brakeTorque = currentBrakingForce;
+    }
+
+    public void StopVehicleCompletely()
+    {
+        FrontLeftWheelCollider.brakeTorque = 0f;
+        FrontRightWheelCollider.brakeTorque = 0f;
+        RearLeftWheelCollider.brakeTorque = 0f;
+        RearRightWheelCollider.brakeTorque = 0f;
     }
 
     private void VehicleSteeringHandling()
