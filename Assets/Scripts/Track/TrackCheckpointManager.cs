@@ -40,17 +40,27 @@ public class TrackCheckpointManager : MonoBehaviour
     {
         int nextCheckpointIndex = nextCheckpointIndexList[RacersTransformList.IndexOf(racerTransform)];
 
+        CarCheckPointEventArgs e = new CarCheckPointEventArgs
+        {
+            carTransform = racerTransform
+        };
+
         if (checkpointList.IndexOf(checkpoint) == nextCheckpointIndex)
         {
             Debug.Log("Correct Checkpoint");
             nextCheckpointIndexList[RacersTransformList.IndexOf(racerTransform)] = (nextCheckpointIndex + 1) % checkpointList.Count;
-            OnPlayerCorrectCheckpoint?.Invoke(this, null);
+
+            //CarCheckPointEventArgs e = new CarCheckPointEventArgs
+            //{
+            //    carTransform = racerTransform
+            //};
+            OnPlayerCorrectCheckpoint?.Invoke(this, e);
         }
 
         else
         {
             Debug.Log("Wrong Checkpoint");
-            OnPlayerWrongCheckpoint?.Invoke(this, null);
+            OnPlayerWrongCheckpoint?.Invoke(this, e);
         }
 
     }
@@ -80,6 +90,7 @@ public class TrackCheckpointManager : MonoBehaviour
             if (count == nextCheckpointIndex)
             {
                 NextCheckpointTransform = CheckpointTransform;
+                Debug.Log(NextCheckpointTransform.gameObject.name);
                 break;
             }
 

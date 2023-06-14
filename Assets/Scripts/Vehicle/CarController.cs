@@ -47,7 +47,7 @@ public class CarController : MonoBehaviour
     //    VehicleWheelAnimationUpdate();
     //}
 
-    private void GetMovementInput()
+    public void GetMovementInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL_MOTION);
         verticalInput = Input.GetAxis(VERTICAL_MOTION);
@@ -57,8 +57,8 @@ public class CarController : MonoBehaviour
 
     private void VehicleMotorHandling()
     {
-        FrontLeftWheelCollider.motorTorque = -verticalInput * vehicleMotorForce;
-        FrontRightWheelCollider.motorTorque = -verticalInput * vehicleMotorForce;
+        FrontLeftWheelCollider.motorTorque = verticalInput * vehicleMotorForce;
+        FrontRightWheelCollider.motorTorque = verticalInput * vehicleMotorForce;
         //currentBrakingForce = bIsVehicleBraking ? vehicleBrakingForce : 0f;
         //if (bIsVehicleBraking)
         //{
@@ -85,10 +85,12 @@ public class CarController : MonoBehaviour
 
     public void StopVehicleCompletely()
     {
-        FrontLeftWheelCollider.brakeTorque = 0f;
-        FrontRightWheelCollider.brakeTorque = 0f;
-        RearLeftWheelCollider.brakeTorque = 0f;
-        RearRightWheelCollider.brakeTorque = 0f;
+        //FrontLeftWheelCollider.brakeTorque = vehicleBrakingForce * 2;
+        //FrontRightWheelCollider.brakeTorque = vehicleBrakingForce * 2;
+        //RearLeftWheelCollider.brakeTorque = vehicleBrakingForce * 2;
+        //RearRightWheelCollider.brakeTorque = vehicleBrakingForce * 2;
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     private void VehicleSteeringHandling()

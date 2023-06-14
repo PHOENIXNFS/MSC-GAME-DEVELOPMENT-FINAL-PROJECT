@@ -25,7 +25,8 @@ public class CarControllerAI : Agent
 
     private void CheckpointTracker_OnCorrectCheckpoint(object Sender, TrackCheckpointManager.CarCheckPointEventArgs e)
     {
-        if(e.carTransform == transform)
+        //Debug.Log(e.carTransform.gameObject.name);
+        if (e.carTransform == transform)
         {
             AddReward(1f);
         }
@@ -33,7 +34,8 @@ public class CarControllerAI : Agent
 
     private void CheckpointTracker_OnWrongCheckpoint(object Sender, TrackCheckpointManager.CarCheckPointEventArgs e)
     {
-        if(e.carTransform == transform)
+        //Debug.Log(e.carTransform.gameObject.name);
+        if (e.carTransform == transform)
         {
             AddReward(-1f);
         }
@@ -41,7 +43,11 @@ public class CarControllerAI : Agent
 
     public override void OnEpisodeBegin()
     {
+        //transform.position = carSpawnPoint.position;
+        //transform.position = carSpawnPoint.position + new Vector3(20f, 0, Random.Range(-5f, 5f));
         transform.position = carSpawnPoint.position + new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f));
+        if (transform.rotation.eulerAngles.y > -90f || transform.rotation.eulerAngles.y < -90f)
+            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         transform.forward = carSpawnPoint.forward;
         trackCheckpointManager.ResetCarChecpoint(transform);
         carController.StopVehicleCompletely();
@@ -75,6 +81,7 @@ public class CarControllerAI : Agent
 
         carController.horizontalInput = forwardmovementamount;
         carController.verticalInput = steeringangleamount;
+        carController.GetMovementInput();
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
